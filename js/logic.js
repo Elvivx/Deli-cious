@@ -1,4 +1,3 @@
-import err from './error'
 import {mapListRecipes,mapBookmark} from './mapperFunction' 
 import {recipeBtn} from './clickFuntions'
 import {fullRecipe, getRecipes} from './asyncFunctions'
