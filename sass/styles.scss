@@ -1,0 +1,35 @@
+@import url(/sass/_display.scss);
+@import url(/sass/_nav.scss);
+@import url(/sass/_loader.scss);
+*{
+    box-sizing: border-box;
+}   
+body{
+    background-repeat: no-repeat;
+    background: linear-gradient(to right , #3fefff , #8499f5);
+}
+main{
+    max-width: 1220px;
+    background: #f7f8ff;
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px;
+    width: 100% ;
+    height: auto;
+    min-height: 1000px;
+    // display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-areas: 
+        "nav "
+        "display"
+    ;
+    position: relative;
+    // overflow: hidden;
+  
+}
+@media (width <= 710px) {
+    main{
+        height: auto;
+        padding: 0;
+    }
+}
