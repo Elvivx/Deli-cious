@@ -36,6 +36,7 @@
         grid-area: list;
         padding: 0;
         // height: 830px;
+        height: 85%;
         overflow-x: scroll;
         scrollbar-width: none;
         .recipe{
@@ -47,6 +48,7 @@
                 padding: 15px 8px;
                 text-decoration: none;
                 h3{
+                    margin: 0;
                     color: #f47883;
                     width: 265px;             /* Set a fixed width for the container */
                     white-space: nowrap;       /* Prevent the text from wrapping to the next line */
@@ -84,8 +86,9 @@
         }
     }
     .footer{
-        position: absolute;
-        bottom: 0;
+        // position: absolute;
+        // bottom: 0;
+        margin-top: auto !important;
         text-align: center;
         width: 100%;
         .pagination{
@@ -132,9 +135,6 @@
             }
         }
         .show{
-            // pointer-events: none;
-            // opacity: 0.5;
-            // filter: grayscale(100%);
             display: block !important;
         }
     }
@@ -306,7 +306,7 @@
 
 
 
-@media (max-width: 710px) {
+@media (max-width: 800px) {
     .display{
         display: flex;
         flex-direction: column;
@@ -314,8 +314,14 @@
     .recipes{
         height: 100dvh;
         padding: 0 5px ;
-        border: 2px solid red;
         overflow: hidden;
+        ul{
+            .recipe{
+                h3{
+                    width: 520px !important;
+                }
+            }
+        }
     }
     .instruction{
         height: 100dvh;
@@ -351,6 +357,34 @@
                             // width: ;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 650px) {
+    .recipes{
+        height: 100dvh;
+        padding: 0 5px ;
+        overflow: hidden;
+        ul{
+            .recipe{
+                h3{
+                    width: 320px !important;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .recipes{
+        height: 100dvh;
+        padding: 0 5px ;
+        overflow: hidden;
+        ul{
+            .recipe{
+                h3{
+                    width: 220px !important;
                 }
             }
         }
