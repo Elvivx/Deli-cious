@@ -158,17 +158,24 @@ function mapBookmark(save){
         })
         if(save.length < 1){
             display_show(document.querySelector('.bookmark h2'))
-        }else
-        display_none(document.querySelector('.bookmark h2'))
+            display_none(document.querySelector('.clear'))
+        }else{
+            display_show(document.querySelector('.clear'))
+            display_none(document.querySelector('.bookmark h2'))
+            console.log(document.querySelector('.clear'))
+        }
     }else{
         bookmark.innerHTML = ''
         bookmarkedEl.forEach((book)=>{
             bookmark.innerHTML += book
         })
         if(bookmarkedEl.length < 1){
+            display_none(document.querySelector('.clear'))
             display_show(document.querySelector('.bookmark h2'))
-        }else
-        display_none(document.querySelector('.bookmark h2'))
+        }else{
+            display_none(document.querySelector('.bookmark h2'))
+            display_show(document.querySelector('.clear'))
+        }
     }
 
 }

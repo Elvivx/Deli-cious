@@ -1,6 +1,7 @@
 import { mapFullRecipe, mapBookmark } from './mapperFunction'
 import { fullResponse } from './asyncFunctions'
-import { bookmarkedEL, bookmarkedID, curEL, getBookmarkedEL, getBookmarkedID , getCurEL} from './localStorage'
+import { display_none, display_show } from './helper'
+import { bookmarkedEL, bookmarkedID, curEL, getBookmarkedEL, getBookmarkedID , getCurEL, clear} from './localStorage'
 
 
 
@@ -116,7 +117,13 @@ function bookmarkedRecipeList(){
         }
     })
 }
-
+let clearBtn = document.querySelector('.clear')
+clearBtn.onclick = ()=> {
+    clear()
+    display_none(document.querySelector('.clear'))
+    display_show(document.querySelector('.bookmark h2'))
+    document.querySelector('.bookmark .list').innerHTML = ''
+}
 
 function click(){
     bookmarkedRecipeList()

@@ -28,5 +28,10 @@ function getCurEL() {
     let store = JSON.parse(data)
     return store
 }
+function clear(){
+    localStorage.removeItem('curEL')
+    localStorage.removeItem('recipeBookmarkedEL')
+    localStorage.removeItem('recipeBookmarkedID')
+}
 
-export {bookmarkedEL, bookmarkedID, curEL, getBookmarkedEL, getBookmarkedID, getCurEL}
+export {bookmarkedEL, bookmarkedID, curEL, getBookmarkedEL, getBookmarkedID, getCurEL, clear}
