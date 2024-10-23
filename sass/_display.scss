@@ -7,16 +7,15 @@
     grid-template-columns: 400px 1fr;
     grid-template-areas: "list recipes";
     grid-area: display;
-    // overflow: hidden;
 }
 
 .recipes{
     position: relative;
-    background: #fefefe;
     grid-area: list;
     display: flex;
     flex-direction: column;
-
+    border-right: 2px solid #ff286c;
+    background: #f1f2f6;
     .info{
         text-align: center;
         text-transform: capitalize;
@@ -34,6 +33,7 @@
         }
     }
     ul{
+        background: #fff;
         border-radius: 5px;
         grid-area: list;
         padding: 0;
@@ -327,6 +327,7 @@
     .recipes{
         height: 100dvh;
         overflow: hidden;
+        border: 0;
         ul{
             .recipe{
                 h3{
