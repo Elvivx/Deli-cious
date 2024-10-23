@@ -1,11 +1,10 @@
 import { respone } from "./asyncFunctions"
 import { PAGES_TO_RENDER  } from "./config"
 import { mapListRecipes } from "./mapperFunction"
-import { cc } from "./logic"
+import { recipeBtn } from "./clickFuntions"
 
 let totalPages
 let curPage = 1
-// let getCurPage = ()=> curPage
 let setCurPage = (newCurPage) => {curPage = newCurPage} // setup for reassinging value on new request from api
 
 
@@ -43,7 +42,7 @@ function paginationBtns(){
             mapListRecipes(curPage)
             
             let searchedRecipes =  document.querySelectorAll('.results .recipe')
-            cc(searchedRecipes) //gives access to the paginated list items for click events
+            recipeBtn(searchedRecipes) //gives access to the paginated list items for click events on them 
             pre.childNodes[1].childNodes[3].childNodes[1].textContent = curPage - 1
             nxt.childNodes[1].childNodes[1].childNodes[1].textContent = curPage + 1
 
@@ -51,21 +50,22 @@ function paginationBtns(){
 
             
     })
-
+    // only page
     if(totalPages  === 1 ){
         nxt.classList.remove('show')
         pre.classList.remove('show')
     }
+    // first page
     if(curPage === 1 && totalPages > 1){
         nxt.classList.add('show')
         pre.classList.remove('show')
     }
-
+    // last page
     if(curPage === totalPages && totalPages > 1){
         pre.classList.add('show')
         nxt.classList.remove('show')
     }
-
+    // inbetween pages
     if(curPage > 1 && curPage < totalPages){
         pre.classList.add('show')
         nxt.classList.add('show')

@@ -4,7 +4,7 @@
 .display{
     min-height: 1000px !important;
     display: grid;
-    grid-template-columns: 400px 800px;
+    grid-template-columns: 400px 1fr;
     grid-template-areas: "list recipes";
     grid-area: display;
     // overflow: hidden;
@@ -14,7 +14,9 @@
     position: relative;
     background: #fefefe;
     grid-area: list;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+
     .info{
         text-align: center;
         text-transform: capitalize;
@@ -35,9 +37,9 @@
         border-radius: 5px;
         grid-area: list;
         padding: 0;
-        height: 85%;
         overflow-x: scroll;
         scrollbar-width: none;
+        margin: 0;
         .recipe{
             list-style: none;
             transition: all 250ms ease;
@@ -88,11 +90,18 @@
         }
     }
     .footer{
-        // position: absolute;
-        // bottom: 0;
+        background: #eceef8;
         margin-top: auto !important;
+        display: flex;
+        flex-direction: column;
         text-align: center;
         width: 100%;
+        padding: 10px 6px; 
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        h3{
+            text-transform: capitalize;
+        }
         .pagination{
             display: flex;
             justify-content: space-between;
@@ -172,13 +181,11 @@
                 height: 350px;
                 overflow: hidden;
                 background-color: #fdc1c6d4;
-                // box-shadow: 0 1px 2px 2px grey;
                 img{
                     mix-blend-mode: multiply;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    // object-position: center;
                 }
             }
             .title{
@@ -286,7 +293,7 @@
             }
         }
         .how-to-cook{
-            padding: 80px;
+            padding: 80px 60px;
             text-align: center;
             h1{
                 color: #ff286c;
@@ -311,7 +318,7 @@
 }
 
 
-
+// media queries......
 @media (max-width: 800px) {
     .display{
         display: flex;
@@ -319,7 +326,6 @@
     }
     .recipes{
         height: 100dvh;
-        padding: 0 5px ;
         overflow: hidden;
         ul{
             .recipe{
@@ -335,10 +341,11 @@
             margin-top: 20px;
             .top{
                 .title{
-                    
+                    // position: static;
                     // left: 50%;
-                    margin: auto;
-                    transform: translate(-50%, -50%);
+                    // margin: auto;
+                    transform: translate(-50%, 30%) !important ;
+                    // width: 10%;
                 }
 
             }
@@ -371,7 +378,6 @@
 @media (max-width: 650px) {
     .recipes{
         height: 100dvh;
-        padding: 0 5px ;
         overflow: hidden;
         ul{
             .recipe{
@@ -385,7 +391,6 @@
 @media (max-width: 450px) {
     .recipes{
         height: 100dvh;
-        padding: 0 5px ;
         overflow: hidden;
         ul{
             .recipe{

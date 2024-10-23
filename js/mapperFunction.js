@@ -57,9 +57,8 @@ function mapFullRecipe(){
                             <img src="${r.image_url}" alt="#">
                         </figure>
                         <div class="title">
-                        <h1>
-                            ${r.title}
-                        </h1>
+                        
+                        <h1>${r.title}</h1>
                         </div>
                     </div>
     
@@ -123,14 +122,14 @@ function mapFullRecipe(){
                     </div>
     
                     <div class="ingredients">
-                        <h1>recipe ingredients</h1>
+                        <h1>🍵recipe ingredients 🍜🧃</h1>
                         <ul>
                             ${ingredients}
                         </ul>
                     </div>
     
                     <div class="how-to-cook">
-                        <h1>how to cook</h1>
+                        <h1>🍛🍗how to cook🍳🍱</h1>
                         <p>This recipe was carefully designed and tested by
                             <span class="how-to-title bold">
                                 ${r.publisher}
@@ -138,7 +137,7 @@ function mapFullRecipe(){
                         </p>
                         <button>
                             <a href="${r.source_url}" target="blank">
-                                Get Steps...
+                                Get Steps...🎈✨
                             </a>
                         </button>
                     </div>
@@ -146,6 +145,7 @@ function mapFullRecipe(){
     })
 
     click()
+    console.log(res[0].servings)
 }
 
 function mapBookmark(save){
@@ -162,7 +162,6 @@ function mapBookmark(save){
         }else{
             display_show(document.querySelector('.clear'))
             display_none(document.querySelector('.bookmark h2'))
-            console.log(document.querySelector('.clear'))
         }
     }else{
         bookmark.innerHTML = ''

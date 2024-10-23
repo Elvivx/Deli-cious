@@ -1,26 +1,7 @@
-import {mapListRecipes,mapBookmark} from './mapperFunction' 
-import {recipeBtn} from './clickFuntions'
-import {fullRecipe, getRecipes} from './asyncFunctions'
+import { mapBookmark } from './mapperFunction' 
+import { fullRecipe } from './asyncFunctions'
 import { getBookmarkedEL } from './localStorage'
-
-const searchInput = document.querySelector('#search')
-const searchBtn = document.querySelector('#submit')
-
-searchBtn.onclick = async (e) =>{
-    e.preventDefault()
-    if(searchInput.value == '') return 
-    
-    await getRecipes(searchInput.value)
-    mapListRecipes(1)
-    let searchedRecipes =  document.querySelectorAll('.results .recipe')
-    cc(searchedRecipes)
-    searchInput.value = ''
-}
-
-
-function cc(list){
-    recipeBtn(list)
-}
+import 'animate.css'
 
 window.onload = ()=>{
     mapBookmark(getBookmarkedEL())
@@ -33,4 +14,15 @@ window.onhashchange = ()=>{
     fullRecipe()
 }
 
-export {cc}
+// let icons = ['/imgs/icons8-cooking-96 (1).png', '/imgs/icons8-cooking-96 (2).png', '/imgs/icons8-cooking-96 (3).png', '/imgs/icons8-cooking-96 (4).png', '/imgs/icons8-cooking-96 (5).png', '/imgs/icons8-cooking-96 (6).png', '/imgs/icons8-cooking-96 .png',]
+// const logoImg = document.querySelector('.logo .img')
+
+//  setInterval(() => {
+//     logoImg.innerHTML = ''
+//     const randomIcon = Math.floor(Math.random() * 7);
+//       console.log(randomIcon);
+//    logoImg.innerHTML = `
+//         <img src="${icons[randomIcon]}" alt="#">
+//    `
+    
+// }, 1000);
