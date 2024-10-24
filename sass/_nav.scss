@@ -49,8 +49,6 @@
         display: inline-block;
         background: linear-gradient(to left , #ff286c , #f47883);
         color: #fff;
-        // margin: 0 10px;
-        
         div{
             display: flex;
             align-items: center;
@@ -199,6 +197,7 @@
         padding: 10px;
     }
     .logo{
+        padding: 0;
         h1{
             display: none;
         }
