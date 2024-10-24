@@ -159,9 +159,15 @@ books.onclick = ()=>{
 
 // animations for adding recipes
 const addRecipe = document.querySelector('.add-recipes')
+const modal = document.querySelector('.adding-recipe-modal')
+const closeModal = document.querySelector('.btn--close-modal')
 addRecipe.onclick = ()=>{
-    console.log('asshole')
+    modal.classList.add('show')
 }
+closeModal.onclick = ()=>{
+    modal.classList.remove('show')
+}
+
 function click(){
     bookmarkedRecipeList()
     servings()

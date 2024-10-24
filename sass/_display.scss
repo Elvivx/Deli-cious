@@ -2,11 +2,11 @@
     box-sizing: border-box;
 }
 .display{
-    min-height: 1000px !important;
+    min-height: 700px !important;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 350px 1fr;
     grid-template-areas: "list recipes";
-    grid-area: display;
+    // grid-area: display;
 }
 
 .recipes{
@@ -15,14 +15,14 @@
     display: flex;
     flex-direction: column;
     border-right: 2px solid #ff286c;
-    background: #f1f2f6;
+    background: #fff;
     .info{
         text-align: center;
         text-transform: capitalize;
-        font-size: 20px;
+        font-size: 14px;
         svg{
             transform: translate(0px ,12px);
-            width: 45px;
+            width: 35px;
         }
         .caution{
             display: none;
@@ -33,13 +33,14 @@
         }
     }
     ul{
-        background: #fff;
+        // background: #fff;
         border-radius: 5px;
         grid-area: list;
         padding: 0;
         overflow-x: scroll;
         scrollbar-width: none;
         margin: 0;
+        height: 100%;
         .recipe{
             list-style: none;
             transition: all 250ms ease;
@@ -52,15 +53,17 @@
                 padding: 15px 8px;
                 text-decoration: none;
                 h3{
+                    font-size: 17;
                     margin: 0;
                     color: #f47883;
-                    width: 265px;             /* Set a fixed width for the container */
+                    width: 235px;             /* Set a fixed width for the container */
                     white-space: nowrap;       /* Prevent the text from wrapping to the next line */
                     overflow: hidden;          /* Hide any text that overflows the container */
                     text-overflow: ellipsis; 
                 }
                 p{
-                    color: #444655;
+                    color: grey;
+                    font-size: 14;
                 }
                 figure{
                     margin: 0 10px;
@@ -76,7 +79,7 @@
                     }
                 }
                 div{
-                    width: 340px;
+                    width: 240px;
                     text-overflow: clip;
                     h3,p{
                         margin: 0 20px ;
@@ -90,7 +93,7 @@
         }
     }
     .footer{
-        background: #eceef8;
+        background: #f5f5f6;
         margin-top: auto !important;
         display: flex;
         flex-direction: column;
@@ -100,6 +103,9 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         h3{
+            font-weight: 300;
+            color: grey;
+            font-size: 14;
             text-transform: capitalize;
         }
         .pagination{
@@ -154,14 +160,14 @@
 .instruction{
     grid-area: recipes;
     height: auto !important;
-
+    background: #eceef8;
     .info{
         text-align: center;
         text-transform: capitalize;
-        font-size: 20px;
+        font-size: 14px;
         svg{
-            transform: translate(0px , 11px);
-            width: 45px;
+            transform: translate(0px , 12px);
+            width: 35px;
             
         }
         .caution{
@@ -286,6 +292,8 @@
                 .ingredient{
                     display: grid;
                     grid-template-columns: 10% 90%;
+                    font-size: 18;
+                    font-weight: 600;
                     svg{
                         color: #ff286c;
                     }
@@ -396,7 +404,7 @@
         ul{
             .recipe{
                 h3{
-                    width: 220px !important;
+                    width: 260px !important;
                 }
             }
         }

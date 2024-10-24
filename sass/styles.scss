@@ -10,20 +10,20 @@ body{
     background: linear-gradient(to right , #3fefff , #8499f5);
 }
 main{
-    max-width: 1220px;
+    max-width: 1020px;
     background: #fff;
     border-radius: 10px;
     margin: auto;
     width: 100% ;
     height: auto;
-    min-height: 1000px;
+    // min-height: 800px;
     overflow: hidden;
     grid-template-columns: 1fr ;
     grid-template-areas: 
         "nav "
         "display"
     ;
-    position: relative;
+    // position: relative;
     // overflow: hidden;
     button,
     input{
@@ -31,9 +31,119 @@ main{
     }
   
 }
+.adding-recipe-modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw ;
+    height: 100dvh;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+    background:rgba(128, 128, 128, 0.379);
+    .btn--close-modal {
+        font-family: inherit;
+        color: inherit;
+        position: absolute;
+        top: 0.5rem;
+        right: 1.6rem;
+        font-size: 3.5rem;
+        cursor: pointer;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        background: none;
+    }
+    .add-recipe-window {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4rem 6rem;
+        z-index: 1000;
+        border-radius: 9px;
+        padding: 2em;
+        transition: 0.5s;
+    }
+    .upload {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem 6rem;
+        .upload__heading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            // margin: 0;
+            margin-bottom: 1rem;
+            grid-column: 1 / -1;
+        }
+        .upload__column {
+            display: grid;
+            grid-template-columns: 1fr 2.8fr;
+            align-items: center;
+            gap: 1.5rem;
+            input {
+                font-size: 14px ;
+                padding: 4px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgb(221, 221, 221);
+                border-image: initial;
+                border-radius: 0.5rem;
+                transition: 0.2s;
+            }
+        }
+        .upload--btn{
+            background: linear-gradient(to left , #ff286c , #f47883);
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 10rem;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            transition: 0.2s;
+            justify-self: center;
+            grid-column: 1 / -1 !important;
+            padding: 10px 15px;
+            font-size: 16;
+            svg path{
+                fill: #fff !important;
+            }
+        }
+    }
+
+}
+.show{
+    display: block;
+}
 @media (width <= 710px) {
     main{
         height: auto;
         padding: 0;
     }
+}
+@media (max-width: 1000px) {
+    .add-recipe-window{
+        width: 600px !important;
+        form{
+            gap: 30px !important;
+        }
+    }
+    
+}
+@media (max-width: 600px) {
+    .add-recipe-window{
+        width: 400px !important;
+    }
+    .upload__column{
+        grid-template-columns: 1fr !important;
+    }
+    
 }
