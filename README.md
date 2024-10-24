@@ -8,3 +8,6 @@
  You can also delete bookmarks if you no longer want to access them, or if you've already made use of it.
 
  # Enjoy making your dishes....
+# Parcel
+This project was made using parcel, to run simply install parcel and bundle the project with it.
+To install parcel `npm i parcel` and to build or run the project `npm run build`.
